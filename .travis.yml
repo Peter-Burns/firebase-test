@@ -1,5 +1,9 @@
 language: node_js
-deploy:
-  provider: firebase
-  token:
-    secure: "1/nwNEYuDYm70hcDd55iRNyQFWDrqYKiQa3v5rZSKyMVPI2mxJDGvw99EoWZ6YpoOI"
+node_js:
+  - "4.0"
+script:
+  - echo "Deploying!"
+install:
+  -npm install -g firebase-tools
+after_success:
+  - firebase deploy --token $FIREBASE_TOKEN
